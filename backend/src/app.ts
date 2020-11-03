@@ -1,13 +1,24 @@
-import {config} from "dotenv"
-config()
+import { config } from "dotenv";
+config();
 
-import express from "express"
-import cors from "cors"
+import express, { Application } from "express";
+import morgan from "morgan";
+import cors from "cors";
 
-const app = express()
+import authRoutes from "./routes/auth.routes";
 
-app.set("PORT", process.env.PORT || 4000)
+// setting up
+const app: Application = express();
 
-app.use(cors())
+// global variables
+app.set("PORT", process.env.PORT || 4000);
 
-export default app
+// routes
+app.use("/api/auth", authRoutes);
+
+// middlewares
+app.use(cors());
+app.use(morgan("dev"));
+app.use(express.json());
+
+export default app;
