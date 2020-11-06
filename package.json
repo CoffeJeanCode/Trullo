@@ -1,0 +1,13 @@
+{
+  "name": "Trullo",
+  "private": true,
+  "scripts": {
+    "start": "lerna run start --stream --parallel",
+    "dev": "lerna run dev --stream --parallel",
+    "backend": "lerna exec --scope backend npm run",
+    "frontend": "lerna exec --scope frontend npm run"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}
