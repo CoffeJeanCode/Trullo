@@ -1,11 +1,15 @@
 {
-  "name": "svelte-app",
-  "version": "1.0.0",
+  "name": "frontend",
+  "version": "0.0.0",
   "scripts": {
+    "start": "sirv public",
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public",
     "validate": "svelte-check"
+  },
+  "dependencies": {
+    "sirv-cli": "^1.0.0",
+    "svelte-dnd-action": "^0.6.21"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
@@ -21,9 +25,5 @@
     "typescript": "^3.9.3",
     "tslib": "^2.0.0",
     "@tsconfig/svelte": "^1.0.0"
-  },
-  "dependencies": {
-    "sirv-cli": "^1.0.0",
-    "svelte-dnd-action": "^0.6.21"
   }
 }
