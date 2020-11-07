@@ -1,5 +1,5 @@
 {
-  "name": "Trullo",
+  "name": "trullo",
   "private": true,
   "scripts": {
     "start": "lerna run start --stream --parallel",
