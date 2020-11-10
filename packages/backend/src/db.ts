@@ -2,7 +2,7 @@ import * as mongoose from "mongoose";
 
 const URI = process.env.DB_URI || "mongodb://localhost/trullo-db";
 
-export const connectToDb = async () => {
+export const connectToDb = async (): Promise<void> => {
   try {
     await mongoose.connect(URI, {
       useFindAndModify: false,

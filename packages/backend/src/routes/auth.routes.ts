@@ -1,4 +1,4 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
 import { signup, signin, profile } from "../controllers/auth.controllers";
 import { validateToken } from "../libs/validateToken";
 
