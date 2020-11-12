@@ -1,24 +1,26 @@
-import { config } from "dotenv";
-config();
+import { config } from 'dotenv'
+config()
 
-import express, { Application } from "express";
-import morgan from "morgan";
-import cors from "cors";
+import express, { Application } from 'express'
+import morgan from 'morgan'
+import cors from 'cors'
 
-import authRoutes from "./routes/auth.routes";
+import authRoutes from './routes/auth.routes'
+import boardRoutes from './routes/board.routes'
 
 // setting up
-const app: Application = express();
+const app: Application = express()
 
 // global variables
-app.set("PORT", process.env.PORT || 4000);
-
-// routes
-app.use("/api/auth", authRoutes);
+app.set('PORT', process.env.PORT || 4000)
 
 // middlewares
-app.use(cors());
-app.use(morgan("dev"));
-app.use(express.json());
+app.use(cors())
+app.use(morgan('dev'))
+app.use(express.json())
 
-export default app;
+// routes
+app.use('/api/auth', authRoutes)
+app.use('/api/board', boardRoutes)
+
+export default app
